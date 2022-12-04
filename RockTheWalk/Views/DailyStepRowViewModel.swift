@@ -7,25 +7,26 @@
 
 import Foundation
 
+let dayFormatter: DateFormatter = {
+    let df = DateFormatter()
+    df.dateFormat = "EEEE, MMM d"    
+    return df
+}()
+
 struct DailyStepRowViewModel: Identifiable {
     private let item: StepDay
-    
     init(item: StepDay = StepDay()) {
         self.item = item
-    }
-    
-    var id: String {
-        return date
-    }
-    
-    var date: String {
-        return dayFormatter.string(from: item.date)
-    }
-    
-    var steps: String {
+        self.date = dayFormatter.string(from: item.date)
+        self.id = UUID()
         if item.stepCount == 0 {
-            return "--"
+            self.steps = "--"
+        } else {
+            self.steps = "\(item.stepCount)"
         }
-        return "\(item.stepCount)"
     }
+    
+    var id: UUID
+    var date: String
+    var steps: String
 }

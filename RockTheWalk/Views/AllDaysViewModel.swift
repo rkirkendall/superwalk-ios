@@ -41,7 +41,7 @@ extension AllDaysView {
                         case .finished:
                           break
                     }
-                } receiveValue: { [weak self] lastWeek in
+                } receiveValue: { [weak self] lastWeek in                    
                     guard let self = self else { return }
                     
                     var lastSixDays = lastWeek
