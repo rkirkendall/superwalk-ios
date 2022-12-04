@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E9EEF0AD29395687007D65A8 /* RockTheWalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AC29395687007D65A8 /* RockTheWalkApp.swift */; };
-		E9EEF0AF29395687007D65A8 /* AllDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AE29395687007D65A8 /* AllDaysView.swift */; };
+		E9EEF0AF29395687007D65A8 /* WeeklyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */; };
 		E9EEF0B129395689007D65A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EEF0B029395689007D65A8 /* Assets.xcassets */; };
 		E9EEF0B429395689007D65A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EEF0B329395689007D65A8 /* Preview Assets.xcassets */; };
 		E9EEF0BB29395839007D65A8 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BA29395839007D65A8 /* Steps.swift */; };
 		E9EEF0BD293973AC007D65A8 /* Date + Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BC293973AC007D65A8 /* Date + Days.swift */; };
 		E9EEF0C3293AB6B8007D65A8 /* StepDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C2293AB6B8007D65A8 /* StepDay.swift */; };
-		E9EEF0CA293B9D72007D65A8 /* AllDaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C9293B9D71007D65A8 /* AllDaysViewModel.swift */; };
+		E9EEF0CA293B9D72007D65A8 /* WeeklyStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */; };
 		E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CB293C0014007D65A8 /* StepsError.swift */; };
 		E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */; };
 		E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */; };
@@ -23,13 +23,13 @@
 /* Begin PBXFileReference section */
 		E9EEF0A929395687007D65A8 /* RockTheWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockTheWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EEF0AC29395687007D65A8 /* RockTheWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockTheWalkApp.swift; sourceTree = "<group>"; };
-		E9EEF0AE29395687007D65A8 /* AllDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysView.swift; sourceTree = "<group>"; };
+		E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepView.swift; sourceTree = "<group>"; };
 		E9EEF0B029395689007D65A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9EEF0B329395689007D65A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9EEF0BA29395839007D65A8 /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		E9EEF0BC293973AC007D65A8 /* Date + Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Days.swift"; sourceTree = "<group>"; };
 		E9EEF0C2293AB6B8007D65A8 /* StepDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDay.swift; sourceTree = "<group>"; };
-		E9EEF0C9293B9D71007D65A8 /* AllDaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysViewModel.swift; sourceTree = "<group>"; };
+		E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepViewModel.swift; sourceTree = "<group>"; };
 		E9EEF0CB293C0014007D65A8 /* StepsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsError.swift; sourceTree = "<group>"; };
 		E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMPedometer + Async.swift"; sourceTree = "<group>"; };
 		E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepRowViewModel.swift; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		E9EEF0C6293AB709007D65A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E9EEF0C9293B9D71007D65A8 /* AllDaysViewModel.swift */,
-				E9EEF0AE29395687007D65A8 /* AllDaysView.swift */,
+				E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */,
+				E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */,
 				E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */,
 			);
 			path = Views;
@@ -190,8 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9EEF0AF29395687007D65A8 /* AllDaysView.swift in Sources */,
-				E9EEF0CA293B9D72007D65A8 /* AllDaysViewModel.swift in Sources */,
+				E9EEF0AF29395687007D65A8 /* WeeklyStepView.swift in Sources */,
+				E9EEF0CA293B9D72007D65A8 /* WeeklyStepViewModel.swift in Sources */,
 				E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */,
 				E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */,
 				E9EEF0AD29395687007D65A8 /* RockTheWalkApp.swift in Sources */,
