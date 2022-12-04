@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class WeeklyStepViewModel: ObservableObject {
     
@@ -16,11 +17,46 @@ class WeeklyStepViewModel: ObservableObject {
     private let stepService: StepsFetchable
     private var cancellables = Set<AnyCancellable>()
     
+    @Published var stepServiceError: StepsError?
+    var error: String? {
+        get {
+            guard let stepServiceError = stepServiceError
+            else { return nil }
+            
+            if case .accessDenied = stepServiceError {
+                return "Please grant motion data access in Settings."
+            }
+            return "A problem occured accessing your step data. Please make sure this device supports step counting!"
+        }
+    }
+    
+    var showSettingsButton: Bool {
+        get {
+            if let stepServiceError = stepServiceError,
+               case .accessDenied = stepServiceError
+            { return true }
+            
+            return false
+        }
+    }
+    
     init(stepService: StepsFetchable) {
         self.stepService = stepService
         
         fetchLastWeeksSteps()
         startUpdatingSteps()
+    }
+    
+    func openSettings(){
+        guard let url = URL(string: UIApplication.openSettingsURLString)
+        else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    func handleError(_ error: StepsError) {
+        self.weekDataSource = []
+        self.todayDataSource = DailyStepRowViewModel()
+        self.stepServiceError = error
     }
     
     func fetchLastWeeksSteps () {
@@ -34,11 +70,10 @@ class WeeklyStepViewModel: ObservableObject {
             .sink { [weak self] value in
                 guard let self = self else { return }
                 switch value {
-                    case .failure:
-                        self.weekDataSource = []
-                        self.todayDataSource = DailyStepRowViewModel()
-                    case .finished:
-                      break
+                case .failure(let error):
+                    self.handleError(error)
+                case .finished:
+                  break
                 }
             } receiveValue: { [weak self] lastWeek in
                 guard let self = self else { return }
@@ -55,10 +90,11 @@ class WeeklyStepViewModel: ObservableObject {
     func startUpdatingSteps() {
         self.stepService.stepsTodayUpdate()
             .receive(on: DispatchQueue.main)
-            .sink { result in
+            .sink { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    self.handleError(error)
                 case .finished:
                     break
                 }

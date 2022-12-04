@@ -18,6 +18,8 @@
 		E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CB293C0014007D65A8 /* StepsError.swift */; };
 		E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */; };
 		E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */; };
+		E9EEF0D7293D124D007D65A8 /* DailyStepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D6293D124D007D65A8 /* DailyStepRow.swift */; };
+		E9EEF0D9293D2839007D65A8 /* Future + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D8293D2839007D65A8 /* Future + Async.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		E9EEF0CB293C0014007D65A8 /* StepsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsError.swift; sourceTree = "<group>"; };
 		E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMPedometer + Async.swift"; sourceTree = "<group>"; };
 		E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepRowViewModel.swift; sourceTree = "<group>"; };
+		E9EEF0D6293D124D007D65A8 /* DailyStepRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepRow.swift; sourceTree = "<group>"; };
+		E9EEF0D8293D2839007D65A8 /* Future + Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Future + Async.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			children = (
 				E9EEF0BA29395839007D65A8 /* Steps.swift */,
 				E9EEF0CB293C0014007D65A8 /* StepsError.swift */,
+				E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */,
 			);
 			path = "Step Service";
 			sourceTree = "<group>";
@@ -104,9 +109,7 @@
 		E9EEF0C6293AB709007D65A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */,
-				E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */,
-				E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */,
+				E9EEF0D5293D1059007D65A8 /* Weekly */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,9 +118,20 @@
 			isa = PBXGroup;
 			children = (
 				E9EEF0BC293973AC007D65A8 /* Date + Days.swift */,
-				E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */,
+				E9EEF0D8293D2839007D65A8 /* Future + Async.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E9EEF0D5293D1059007D65A8 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */,
+				E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */,
+				E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */,
+				E9EEF0D6293D124D007D65A8 /* DailyStepRow.swift */,
+			);
+			path = Weekly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,8 @@
 				E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */,
 				E9EEF0AD29395687007D65A8 /* RockTheWalkApp.swift in Sources */,
 				E9EEF0BD293973AC007D65A8 /* Date + Days.swift in Sources */,
+				E9EEF0D9293D2839007D65A8 /* Future + Async.swift in Sources */,
+				E9EEF0D7293D124D007D65A8 /* DailyStepRow.swift in Sources */,
 				E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */,
 				E9EEF0C3293AB6B8007D65A8 /* StepDay.swift in Sources */,
 				E9EEF0BB29395839007D65A8 /* Steps.swift in Sources */,

@@ -36,12 +36,17 @@ extension StepService: StepsFetchable {
 }
 
 // MARK: - Device Updates
-extension StepService {
+extension StepService {    
+    
     private func startStepUpdates() throws {
         guard CMPedometer.isStepCountingAvailable() else { throw StepsError.stepCountUnavailable }
 
         pedometer.startUpdates(from: Date().startOfDay) { data, error in
-            if let data = data { self.dailyStepUpdates.send(StepDay(pedometerData: data)) }
+            if let error = error {
+                let stepErr = StepsError.fromCMError(error)
+                self.dailyStepUpdates.send(completion: .failure(stepErr))
+            }
+            else if let data = data { self.dailyStepUpdates.send(StepDay(pedometerData: data)) }
         }
     }
 
