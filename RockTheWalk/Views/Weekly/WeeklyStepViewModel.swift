@@ -7,12 +7,13 @@
 
 import Foundation
 import Combine
+import SwiftUI
 import UIKit
 
-class WeeklyStepViewModel: ObservableObject {
+class WeeklyStepViewModel: ObservableObject {        
     
-    @Published var todayDataSource: DailyStepRowViewModel = DailyStepRowViewModel()
-    @Published var weekDataSource: [DailyStepRowViewModel] = []
+    @Published var todayDataSource: DailyStepViewModel = DailyStepViewModel()
+    @Published var weekDataSource: [DailyStepViewModel] = []
     
     private let stepService: StepsFetchable
     private var cancellables = Set<AnyCancellable>()
@@ -55,7 +56,7 @@ class WeeklyStepViewModel: ObservableObject {
     
     func handleError(_ error: StepsError) {
         self.weekDataSource = []
-        self.todayDataSource = DailyStepRowViewModel()
+        self.todayDataSource = DailyStepViewModel()
         self.stepServiceError = error
     }
     
@@ -64,7 +65,7 @@ class WeeklyStepViewModel: ObservableObject {
             .map { stepDays in
                 stepDays
                     .sorted {$0.date > $1.date}
-                    .map { DailyStepRowViewModel(item:$0) }
+                    .map { DailyStepViewModel(item:$0) }
             }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in
@@ -100,8 +101,14 @@ class WeeklyStepViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] updatedSteps in
                 guard let self = self else { return }
-                self.todayDataSource = DailyStepRowViewModel(item: updatedSteps)
+                self.todayDataSource = DailyStepViewModel(item: updatedSteps)
             }
             .store(in: &cancellables)
+    }
+}
+
+extension WeeklyStepViewModel {
+    func dailyStepView (dailyStepViewModel: DailyStepViewModel) -> some View {
+        return DailyStepView(viewModel: dailyStepViewModel)
     }
 }

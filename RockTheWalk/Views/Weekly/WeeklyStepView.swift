@@ -35,7 +35,14 @@ struct WeeklyStepView: View {
                 errorSection
                 
                 List(viewModel.weekDataSource) { rowViewModel in
-                    DailyStepRow(viewModel: rowViewModel)
+                    NavigationLink (
+                        destination: {
+                            viewModel.dailyStepView(dailyStepViewModel: rowViewModel)
+                            
+                        }, label: {
+                            DailyStepRow(viewModel: rowViewModel)
+                    })
+                                        
                 }
             }
         }
@@ -44,19 +51,17 @@ struct WeeklyStepView: View {
 
 private extension WeeklyStepView {
     var errorSection: some View {
-        Section {
+        VStack {
             if let error = viewModel.error {
-                VStack {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .imageScale(.large)
-                        .foregroundColor(.accentColor)                    
-                    Text(error)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    if(viewModel.showSettingsButton) {
-                        Button("Open Settings") {
-                            viewModel.openSettings()
-                        }
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                Text(error)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                if(viewModel.showSettingsButton) {
+                    Button("Open Settings") {
+                        viewModel.openSettings()
                     }
                 }
             }

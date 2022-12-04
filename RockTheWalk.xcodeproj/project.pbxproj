@@ -11,32 +11,36 @@
 		E9EEF0AF29395687007D65A8 /* WeeklyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */; };
 		E9EEF0B129395689007D65A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EEF0B029395689007D65A8 /* Assets.xcassets */; };
 		E9EEF0B429395689007D65A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EEF0B329395689007D65A8 /* Preview Assets.xcassets */; };
-		E9EEF0BB29395839007D65A8 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BA29395839007D65A8 /* Steps.swift */; };
+		E9EEF0BB29395839007D65A8 /* StepService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BA29395839007D65A8 /* StepService.swift */; };
 		E9EEF0BD293973AC007D65A8 /* Date + Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BC293973AC007D65A8 /* Date + Days.swift */; };
 		E9EEF0C3293AB6B8007D65A8 /* StepDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C2293AB6B8007D65A8 /* StepDay.swift */; };
 		E9EEF0CA293B9D72007D65A8 /* WeeklyStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */; };
 		E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CB293C0014007D65A8 /* StepsError.swift */; };
 		E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */; };
-		E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */; };
+		E9EEF0D2293C41F2007D65A8 /* DailyStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D1293C41F2007D65A8 /* DailyStepViewModel.swift */; };
 		E9EEF0D7293D124D007D65A8 /* DailyStepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D6293D124D007D65A8 /* DailyStepRow.swift */; };
 		E9EEF0D9293D2839007D65A8 /* Future + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D8293D2839007D65A8 /* Future + Async.swift */; };
+		E9EEF0DC293D32A4007D65A8 /* DailyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0DB293D32A4007D65A8 /* DailyStepView.swift */; };
+		E9EEF0E0293D4925007D65A8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0DF293D4925007D65A8 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E9EEF0A929395687007D65A8 /* RockTheWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockTheWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9EEF0A929395687007D65A8 /* SUPERWALK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUPERWALK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EEF0AC29395687007D65A8 /* RockTheWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockTheWalkApp.swift; sourceTree = "<group>"; };
 		E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepView.swift; sourceTree = "<group>"; };
 		E9EEF0B029395689007D65A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9EEF0B329395689007D65A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E9EEF0BA29395839007D65A8 /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
+		E9EEF0BA29395839007D65A8 /* StepService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepService.swift; sourceTree = "<group>"; };
 		E9EEF0BC293973AC007D65A8 /* Date + Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Days.swift"; sourceTree = "<group>"; };
 		E9EEF0C2293AB6B8007D65A8 /* StepDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDay.swift; sourceTree = "<group>"; };
 		E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepViewModel.swift; sourceTree = "<group>"; };
 		E9EEF0CB293C0014007D65A8 /* StepsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsError.swift; sourceTree = "<group>"; };
 		E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMPedometer + Async.swift"; sourceTree = "<group>"; };
-		E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepRowViewModel.swift; sourceTree = "<group>"; };
+		E9EEF0D1293C41F2007D65A8 /* DailyStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepViewModel.swift; sourceTree = "<group>"; };
 		E9EEF0D6293D124D007D65A8 /* DailyStepRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepRow.swift; sourceTree = "<group>"; };
 		E9EEF0D8293D2839007D65A8 /* Future + Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Future + Async.swift"; sourceTree = "<group>"; };
+		E9EEF0DB293D32A4007D65A8 /* DailyStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepView.swift; sourceTree = "<group>"; };
+		E9EEF0DF293D4925007D65A8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,7 @@
 		E9EEF0AA29395687007D65A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9EEF0A929395687007D65A8 /* RockTheWalk.app */,
+				E9EEF0A929395687007D65A8 /* SUPERWALK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,7 +95,7 @@
 		E9EEF0C4293AB6EF007D65A8 /* Step Service */ = {
 			isa = PBXGroup;
 			children = (
-				E9EEF0BA29395839007D65A8 /* Steps.swift */,
+				E9EEF0BA29395839007D65A8 /* StepService.swift */,
 				E9EEF0CB293C0014007D65A8 /* StepsError.swift */,
 				E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */,
 			);
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E9EEF0C2293AB6B8007D65A8 /* StepDay.swift */,
+				E9EEF0DF293D4925007D65A8 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 		E9EEF0C6293AB709007D65A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E9EEF0DA293D3285007D65A8 /* Daily */,
 				E9EEF0D5293D1059007D65A8 /* Weekly */,
 			);
 			path = Views;
@@ -128,18 +134,26 @@
 			children = (
 				E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */,
 				E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */,
-				E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */,
 				E9EEF0D6293D124D007D65A8 /* DailyStepRow.swift */,
 			);
 			path = Weekly;
 			sourceTree = "<group>";
 		};
+		E9EEF0DA293D3285007D65A8 /* Daily */ = {
+			isa = PBXGroup;
+			children = (
+				E9EEF0DB293D32A4007D65A8 /* DailyStepView.swift */,
+				E9EEF0D1293C41F2007D65A8 /* DailyStepViewModel.swift */,
+			);
+			path = Daily;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E9EEF0A829395687007D65A8 /* RockTheWalk */ = {
+		E9EEF0A829395687007D65A8 /* SUPERWALK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9EEF0B729395689007D65A8 /* Build configuration list for PBXNativeTarget "RockTheWalk" */;
+			buildConfigurationList = E9EEF0B729395689007D65A8 /* Build configuration list for PBXNativeTarget "SUPERWALK" */;
 			buildPhases = (
 				E9EEF0A529395687007D65A8 /* Sources */,
 				E9EEF0A629395687007D65A8 /* Frameworks */,
@@ -149,9 +163,9 @@
 			);
 			dependencies = (
 			);
-			name = RockTheWalk;
+			name = SUPERWALK;
 			productName = RockTheWalk;
-			productReference = E9EEF0A929395687007D65A8 /* RockTheWalk.app */;
+			productReference = E9EEF0A929395687007D65A8 /* SUPERWALK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9EEF0A829395687007D65A8 /* RockTheWalk */,
+				E9EEF0A829395687007D65A8 /* SUPERWALK */,
 			);
 		};
 /* End PBXProject section */
@@ -204,17 +218,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EEF0DC293D32A4007D65A8 /* DailyStepView.swift in Sources */,
 				E9EEF0AF29395687007D65A8 /* WeeklyStepView.swift in Sources */,
+				E9EEF0E0293D4925007D65A8 /* Settings.swift in Sources */,
 				E9EEF0CA293B9D72007D65A8 /* WeeklyStepViewModel.swift in Sources */,
 				E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */,
-				E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */,
+				E9EEF0D2293C41F2007D65A8 /* DailyStepViewModel.swift in Sources */,
 				E9EEF0AD29395687007D65A8 /* RockTheWalkApp.swift in Sources */,
 				E9EEF0BD293973AC007D65A8 /* Date + Days.swift in Sources */,
 				E9EEF0D9293D2839007D65A8 /* Future + Async.swift in Sources */,
 				E9EEF0D7293D124D007D65A8 /* DailyStepRow.swift in Sources */,
 				E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */,
 				E9EEF0C3293AB6B8007D65A8 /* StepDay.swift in Sources */,
-				E9EEF0BB29395839007D65A8 /* Steps.swift in Sources */,
+				E9EEF0BB29395839007D65A8 /* StepService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +362,8 @@
 				DEVELOPMENT_TEAM = D8658PF8FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SUPERWALK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSMotionUsageDescription = "Motion data is used to display your recent step counts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -376,6 +394,8 @@
 				DEVELOPMENT_TEAM = D8658PF8FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SUPERWALK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSMotionUsageDescription = "Motion data is used to display your recent step counts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -407,7 +427,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9EEF0B729395689007D65A8 /* Build configuration list for PBXNativeTarget "RockTheWalk" */ = {
+		E9EEF0B729395689007D65A8 /* Build configuration list for PBXNativeTarget "SUPERWALK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9EEF0B829395689007D65A8 /* Debug */,

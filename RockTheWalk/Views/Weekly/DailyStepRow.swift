@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 struct DailyStepRow: View {
-    private let viewModel: DailyStepRowViewModel
+    private let viewModel: DailyStepViewModel
     
-    init(viewModel: DailyStepRowViewModel) {
+    init(viewModel: DailyStepViewModel) {
         self.viewModel = viewModel
     }
     

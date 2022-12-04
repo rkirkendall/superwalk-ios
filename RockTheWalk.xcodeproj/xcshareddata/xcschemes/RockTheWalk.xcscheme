@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E9EEF0A829395687007D65A8"
-               BuildableName = "RockTheWalk.app"
-               BlueprintName = "RockTheWalk"
+               BuildableName = "SUPERWALK.app"
+               BlueprintName = "SUPERWALK"
                ReferencedContainer = "container:RockTheWalk.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9EEF0A829395687007D65A8"
-            BuildableName = "RockTheWalk.app"
-            BlueprintName = "RockTheWalk"
+            BuildableName = "SUPERWALK.app"
+            BlueprintName = "SUPERWALK"
             ReferencedContainer = "container:RockTheWalk.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9EEF0A829395687007D65A8"
-            BuildableName = "RockTheWalk.app"
-            BlueprintName = "RockTheWalk"
+            BuildableName = "SUPERWALK.app"
+            BlueprintName = "SUPERWALK"
             ReferencedContainer = "container:RockTheWalk.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
