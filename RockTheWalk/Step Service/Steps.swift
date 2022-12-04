@@ -16,35 +16,41 @@ protocol StepsFetchable {
 
 final class StepService {
     private let pedometer = CMPedometer()
+    private var dailyStepUpdates = PassthroughSubject<StepDay, StepsError>()
 }
 
 extension StepService: StepsFetchable {
-    func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError> {
+    public func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError> {
         return lastWeeksSteps()
     }
 
-    func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError> {
-        <#code#>
+    public func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError> {
+        do {
+            try startStepUpdates()
+        } catch StepsError.stepCountUnavailable {
+            dailyStepUpdates.send(completion: .failure(.stepCountUnavailable))
+        } catch {}
+        
+        return dailyStepUpdates.eraseToAnyPublisher()
     }
 }
 
 // MARK: - Device Updates
 extension StepService {
-    public func startStepUpdates() throws {
-        try isStepCountingAvailable()
+    private func startStepUpdates() throws {
+        guard CMPedometer.isStepCountingAvailable() else { throw StepsError.stepCountUnavailable }
 
         pedometer.startUpdates(from: Date().startOfDay) { data, error in
-            if let data = data { todayStepsUpdated.send(StepDay(pedometerData: data)) }
+            if let data = data { self.dailyStepUpdates.send(StepDay(pedometerData: data)) }
         }
     }
 
-    public func stopStepUpdates() { pedometer.stopUpdates() }
+    private func stopStepUpdates() { pedometer.stopUpdates() }
 }
 
 //MARK: - Data Queries
 extension StepService {
-    
-    func lastWeeksSteps() -> AnyPublisher<[StepDay], StepsError> {
+    private func lastWeeksSteps() -> AnyPublisher<[StepDay], StepsError> {
         let pubs = (0...6).map { stepsDataForDaysAgo($0) }
         return Publishers.MergeMany(pubs)
             .collect()
@@ -54,7 +60,7 @@ extension StepService {
             .eraseToAnyPublisher()
     }
         
-    func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<CMPedometerData, StepsError>  {
+    private func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<CMPedometerData, StepsError>  {
         
         let (start, end) = Date().dayStartAndEndFor(numberOfDaysAgo: days)
         guard let start = start, let end = end
