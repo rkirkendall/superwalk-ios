@@ -10,21 +10,19 @@ import CoreMotion
 import Combine
 
 protocol StepsFetchable {
-    func stepsLastWeek() -> AnyPublisher<StepWeek, StepsError>
+    func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError>
     func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError>
 }
 
 final class StepService {
-    private static let pedometer = CMPedometer()
+    private let pedometer = CMPedometer()
 }
 
 extension StepService: StepsFetchable {
-    func stepsLastWeek() -> AnyPublisher<StepWeek, StepsError> {
-        do {
-            let stepWeek = await StepService.lastWeeksSteps()
-        }
+    func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError> {
+        return lastWeeksSteps()
     }
-    
+
     func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError> {
         <#code#>
     }
@@ -32,41 +30,31 @@ extension StepService: StepsFetchable {
 
 // MARK: - Device Updates
 extension StepService {
-    public static func startStepUpdates() throws {
+    public func startStepUpdates() throws {
         try isStepCountingAvailable()
-        
+
         pedometer.startUpdates(from: Date().startOfDay) { data, error in
             if let data = data { todayStepsUpdated.send(StepDay(pedometerData: data)) }
         }
     }
-    
-    public static func stopStepUpdates() { pedometer.stopUpdates() }
+
+    public func stopStepUpdates() { pedometer.stopUpdates() }
 }
 
 //MARK: - Data Queries
 extension StepService {
     
-    static func lastWeeksSteps() async throws -> StepWeek {
-        var weekData: [StepDay] = []
-    
-        for i in 0...6 {
-            // Should always build array in order. No need to sort.
-            await weekData.append(StepDay(pedometerData: try stepsDataForDaysAgo(i)))
-        }
-        
-        return StepWeek(days: weekData)
+    func lastWeeksSteps() -> AnyPublisher<[StepDay], StepsError> {
+        let pubs = (0...6).map { stepsDataForDaysAgo($0) }
+        return Publishers.MergeMany(pubs)
+            .collect()
+            .map { pedometerDataArray in
+                pedometerDataArray.map { StepDay(pedometerData: $0) }
+            }
+            .eraseToAnyPublisher()
     }
         
-    static func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<CMPedometerData, StepsError>  {
-        
-        // Handle any error that could come from attempting to access the pedometer data
-        do {
-            try isDataAccessAvailable()
-            try isStepCountingAvailable()
-        } catch let error as StepsError {
-            return Fail(error: error).eraseToAnyPublisher()
-        } catch { /* For compiler, not used. */ }
-        
+    func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<CMPedometerData, StepsError>  {
         
         let (start, end) = Date().dayStartAndEndFor(numberOfDaysAgo: days)
         guard let start = start, let end = end
@@ -74,20 +62,8 @@ extension StepService {
             return Fail(error: StepsError.invalidQueryDateContruction).eraseToAnyPublisher()
         }
         
-        pedometer.queryPedometerData(from: start, to: end) { data, error in
-            if let error = error {
-                return Fail(error: StepsError.queryError(description: error.localizedDescription)).eraseToAnyPublisher()
-            }
-
-            if let data = data {
-//                data
-            }
-        }
+        return pedometer.queryPedometerData(from: start, to: end).eraseToAnyPublisher()
     }
     
-    func queryPedometerData(from start: Date, to end: Date) -> Future <CMPedometerData, Error> {
-        pedometer.queryPedometerData(from: start, to: end) { data, error in
-            return Future() 
-        }
-    }
+    
 }

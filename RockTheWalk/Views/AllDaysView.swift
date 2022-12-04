@@ -10,6 +10,7 @@ import SwiftUI
 struct AllDaysView: View {
     
     @State var stepsLastSixDays = [StepDay]()
+    let steps = StepService()
     
     var body: some View {
         
@@ -22,21 +23,14 @@ struct AllDaysView: View {
                 }
             }
         }
-        .task {
-            do {
-                stepsLastSixDays = try await StepService.lastSixDays()
-            } catch {
-                print(error)
-            }
-        }
         
         VStack {
             Image(systemName: "figure.walk")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             .padding()
-            Button("Start Updating") {
-                try? StepService.startStepUpdates()
+            Button("Get data") {
+                steps.lastWeeksSteps()
             }
         }
         .padding()
