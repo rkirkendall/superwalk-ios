@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct RockTheWalkApp: App {
+    
+    let stepService: StepsFetchable
+    let allDaysViewModel: AllDaysView.AllDaysViewModel
+    
+    init() {
+        stepService = StepService()
+        allDaysViewModel = AllDaysView.AllDaysViewModel(stepService: stepService)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            AllDaysView()
+            AllDaysView(viewModel: allDaysViewModel)
         }
     }
 }

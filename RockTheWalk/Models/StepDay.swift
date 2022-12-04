@@ -8,26 +8,20 @@
 import Foundation
 import CoreMotion
 
-public struct StepWeek {
-    let days: [StepDay]
-}
-
 public struct StepDay {
     let date: Date
     let stepCount: Int
     let distanceMeters: Double?
     
+    init(){
+        date = Date()
+        stepCount = 0
+        distanceMeters = nil
+    }
+    
     init(pedometerData: CMPedometerData) {
         date = pedometerData.startDate
         stepCount = pedometerData.numberOfSteps.intValue
         distanceMeters = pedometerData.distance?.doubleValue
-    }
-    
-    var displayDate: String {
-        get {
-            let df = DateFormatter()
-            df.dateFormat = "EEEE, MMM d"
-            return df.string(from: date)
-        }
-    }
+    }    
 }

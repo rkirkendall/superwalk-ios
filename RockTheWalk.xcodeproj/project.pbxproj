@@ -17,6 +17,8 @@
 		E9EEF0CA293B9D72007D65A8 /* AllDaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C9293B9D71007D65A8 /* AllDaysViewModel.swift */; };
 		E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CB293C0014007D65A8 /* StepsError.swift */; };
 		E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */; };
+		E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */; };
+		E9EEF0D4293C4248007D65A8 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D3293C4248007D65A8 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		E9EEF0C9293B9D71007D65A8 /* AllDaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysViewModel.swift; sourceTree = "<group>"; };
 		E9EEF0CB293C0014007D65A8 /* StepsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsError.swift; sourceTree = "<group>"; };
 		E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMPedometer + Async.swift"; sourceTree = "<group>"; };
+		E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepRowViewModel.swift; sourceTree = "<group>"; };
+		E9EEF0D3293C4248007D65A8 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			children = (
 				E9EEF0C9293B9D71007D65A8 /* AllDaysViewModel.swift */,
 				E9EEF0AE29395687007D65A8 /* AllDaysView.swift */,
+				E9EEF0D1293C41F2007D65A8 /* DailyStepRowViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			children = (
 				E9EEF0BC293973AC007D65A8 /* Date + Days.swift */,
 				E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */,
+				E9EEF0D3293C4248007D65A8 /* Formatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -189,7 +195,9 @@
 			files = (
 				E9EEF0AF29395687007D65A8 /* AllDaysView.swift in Sources */,
 				E9EEF0CA293B9D72007D65A8 /* AllDaysViewModel.swift in Sources */,
+				E9EEF0D4293C4248007D65A8 /* Formatter.swift in Sources */,
 				E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */,
+				E9EEF0D2293C41F2007D65A8 /* DailyStepRowViewModel.swift in Sources */,
 				E9EEF0AD29395687007D65A8 /* RockTheWalkApp.swift in Sources */,
 				E9EEF0BD293973AC007D65A8 /* Date + Days.swift in Sources */,
 				E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */,

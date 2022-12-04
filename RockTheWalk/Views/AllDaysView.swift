@@ -9,36 +9,34 @@ import SwiftUI
 
 struct AllDaysView: View {
     
-    @State var stepsLastSixDays = [StepDay]()
-    let steps = StepService()
+    @ObservedObject var viewModel: AllDaysViewModel
+    
+    init(viewModel: AllDaysViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
-        
         NavigationStack {
-            List(stepsLastSixDays, id:\.date) { stepDay in
+            Text(viewModel.todayViewModel.date)
+                .font(.largeTitle)
+                .padding()
+            HStack {
+                Image(systemName: "figure.walk")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                .padding()
+                Text(viewModel.todayViewModel.steps)
+                    .font(.title2)
+                Text("Steps taken today")
+                    .font(.title2)
+            }
+            List(viewModel.weekRowsViewModel) { row in
                 HStack {
-                    Text(stepDay.displayDate)
+                    Text(row.date)
                     Spacer()
-                    Text(String(stepDay.stepCount))
+                    Text(row.steps)
                 }
             }
         }
-        
-        VStack {
-            Image(systemName: "figure.walk")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            .padding()
-            Button("Get data") {
-                steps.lastWeeksSteps()
-            }
-        }
-        .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        AllDaysView()
     }
 }
