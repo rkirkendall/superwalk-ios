@@ -11,13 +11,16 @@ import Charts
 struct WeeklyStepView: View {
     
     @ObservedObject var viewModel: WeeklyStepViewModel
+    @State private var showSheet = false
+    @State var selectedRow: DailyStepViewModel
     
     init(viewModel: WeeklyStepViewModel) {
         self.viewModel = viewModel
+        self.selectedRow = DailyStepViewModel()
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 HStack {
                     Image(systemName: "figure.walk")
@@ -61,18 +64,20 @@ struct WeeklyStepView: View {
                 errorSection
                 
                 List(viewModel.weekDataSource) { rowViewModel in
-                    NavigationLink (
-                        destination: {
-                            viewModel.dailyStepView(dailyStepViewModel: rowViewModel)
-                            
-                        }, label: {
-                            DailyStepRow(viewModel: rowViewModel)
+                    Button(action: {
+                        DispatchQueue.main.async { self.selectedRow = rowViewModel }
+                        showSheet = true
+                    }, label: {
+                        DailyStepRow(viewModel: rowViewModel)
                     })
                 }
                 .scrollContentBackground(.hidden)
             }
         }
-        .navigationBarTitleDisplayMode(.large)
+        .sheet(isPresented: $showSheet, content: {
+            viewModel.dailyStepView(dailyStepViewModel: self.selectedRow)
+                .presentationDetents([.medium])
+        })
     }
 }
 
