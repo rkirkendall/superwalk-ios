@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct WeeklyStepView: View {
     
@@ -18,19 +19,44 @@ struct WeeklyStepView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text(viewModel.todayDataSource.date)
-                    .font(.largeTitle)
-                    .padding()
                 HStack {
                     Image(systemName: "figure.walk")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
-                    .padding()
-                    Text(viewModel.todayDataSource.steps)
-                        .font(.title2)
-                    Text("Steps taken today")
-                        .font(.title2)
+                    Text("SUPERWALK")
+                        .font(.largeTitle)
+                        .bold()
+                        .tracking(5)
                 }
+                
+                VStack {
+                    Text(viewModel.todayDataSource.steps)
+                        .font(.system(size:60))
+                        .bold()
+                        .tracking(5)
+                    Text("Steps Today")
+                        .bold()
+                }
+                .padding([.bottom], 20)
+                .padding([.top], -20)
+                
+                HStack {
+                    Text("LAST WEEK")
+                        .tracking(3)
+                        .bold()
+                        .padding([.leading])
+                    Spacer()
+                }
+                Chart {
+                    ForEach(viewModel.weekDataSource) { dailySteps in
+                        BarMark(
+                            x: .value("Day", dailySteps.shortDate),
+                            y: .value("Step Count", dailySteps.stepsInt)
+                        )
+                    }
+                }
+                .padding()
+                .frame(height: 200)
                 
                 errorSection
                 
@@ -42,10 +68,11 @@ struct WeeklyStepView: View {
                         }, label: {
                             DailyStepRow(viewModel: rowViewModel)
                     })
-                                        
                 }
+                .scrollContentBackground(.hidden)
             }
         }
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 

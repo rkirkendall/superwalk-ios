@@ -8,13 +8,11 @@
 import XCTest
 import Combine
 
-@testable import SUPERWALK
-
 struct MockStepDataProvider: StepDataProvider {
     
     var shouldFail = false
     
-    func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<SUPERWALK.StepDay, SUPERWALK.StepsError> {
+    func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<StepDay, StepsError> {
         let (start, _) = Date().dayStartAndEndFor(numberOfDaysAgo: days)
         
         if shouldFail {

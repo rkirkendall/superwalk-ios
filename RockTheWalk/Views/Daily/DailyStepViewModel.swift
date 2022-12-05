@@ -15,6 +15,12 @@ let dayFormatter: DateFormatter = {
     return df
 }()
 
+let shortDayFormatter: DateFormatter = {
+    let df = DateFormatter()
+    df.dateFormat = "MM/dd"
+    return df
+}()
+
 class DailyStepViewModel: Identifiable, ObservableObject {
     
     @Published var distance: String = "--"
@@ -26,7 +32,9 @@ class DailyStepViewModel: Identifiable, ObservableObject {
     init(item: StepDay = StepDay()) {
         self.item = item
         self.date = dayFormatter.string(from: item.date)
+        self.shortDate = shortDayFormatter.string(from: item.date)
         self.id = UUID()
+        self.stepsInt = item.stepCount
         if item.stepCount == 0 {
             self.steps = "--"
         } else {
@@ -41,7 +49,7 @@ class DailyStepViewModel: Identifiable, ObservableObject {
             .store(in: &cancellables)
     }
     
-    func updateDistanceLabel(_ usesMeters: Bool) {        
+    func updateDistanceLabel(_ usesMeters: Bool) {
         guard let distanceM = item.distanceMeters
         else {
             self.distance = "Not available"
@@ -62,5 +70,7 @@ class DailyStepViewModel: Identifiable, ObservableObject {
     
     var id: UUID
     var date: String
+    var shortDate: String
     var steps: String
+    var stepsInt: Int
 }

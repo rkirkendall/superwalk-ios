@@ -24,6 +24,18 @@
 		E9EEF0E0293D4925007D65A8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0DF293D4925007D65A8 /* Settings.swift */; };
 		E9EEF0E9293D5FE5007D65A8 /* WeeklyStepViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0E8293D5FE5007D65A8 /* WeeklyStepViewModelTests.swift */; };
 		E9EEF0F4293D6805007D65A8 /* StepDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0F3293D6805007D65A8 /* StepDataProviderTests.swift */; };
+		E9EEF104293D8793007D65A8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0DF293D4925007D65A8 /* Settings.swift */; };
+		E9EEF105293D8793007D65A8 /* StepDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C2293AB6B8007D65A8 /* StepDay.swift */; };
+		E9EEF106293D87A4007D65A8 /* StepsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CB293C0014007D65A8 /* StepsError.swift */; };
+		E9EEF107293D87A4007D65A8 /* Date + Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BC293973AC007D65A8 /* Date + Days.swift */; };
+		E9EEF108293D87A4007D65A8 /* WeeklyStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0C9293B9D71007D65A8 /* WeeklyStepViewModel.swift */; };
+		E9EEF109293D87A4007D65A8 /* Future + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D8293D2839007D65A8 /* Future + Async.swift */; };
+		E9EEF10A293D87A4007D65A8 /* CMPedometer + Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */; };
+		E9EEF10B293D87A4007D65A8 /* DailyStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D1293C41F2007D65A8 /* DailyStepViewModel.swift */; };
+		E9EEF10C293D87A4007D65A8 /* DailyStepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0D6293D124D007D65A8 /* DailyStepRow.swift */; };
+		E9EEF10D293D87A4007D65A8 /* DailyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0DB293D32A4007D65A8 /* DailyStepView.swift */; };
+		E9EEF10E293D87A4007D65A8 /* WeeklyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */; };
+		E9EEF10F293D87A4007D65A8 /* StepService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BA29395839007D65A8 /* StepService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +131,6 @@
 		E9EEF0C4293AB6EF007D65A8 /* Step Service */ = {
 			isa = PBXGroup;
 			children = (
-				E9EEF0F2293D64F7007D65A8 /* Mocks */,
 				E9EEF0BA29395839007D65A8 /* StepService.swift */,
 				E9EEF0CB293C0014007D65A8 /* StepsError.swift */,
 				E9EEF0CD293C122D007D65A8 /* CMPedometer + Async.swift */,
@@ -180,13 +191,6 @@
 				E9EEF0F3293D6805007D65A8 /* StepDataProviderTests.swift */,
 			);
 			path = SUPERWALKTests;
-			sourceTree = "<group>";
-		};
-		E9EEF0F2293D64F7007D65A8 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,8 +313,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EEF10D293D87A4007D65A8 /* DailyStepView.swift in Sources */,
+				E9EEF107293D87A4007D65A8 /* Date + Days.swift in Sources */,
+				E9EEF106293D87A4007D65A8 /* StepsError.swift in Sources */,
+				E9EEF10B293D87A4007D65A8 /* DailyStepViewModel.swift in Sources */,
+				E9EEF104293D8793007D65A8 /* Settings.swift in Sources */,
+				E9EEF10E293D87A4007D65A8 /* WeeklyStepView.swift in Sources */,
+				E9EEF109293D87A4007D65A8 /* Future + Async.swift in Sources */,
+				E9EEF10A293D87A4007D65A8 /* CMPedometer + Async.swift in Sources */,
+				E9EEF10C293D87A4007D65A8 /* DailyStepRow.swift in Sources */,
+				E9EEF10F293D87A4007D65A8 /* StepService.swift in Sources */,
 				E9EEF0F4293D6805007D65A8 /* StepDataProviderTests.swift in Sources */,
+				E9EEF105293D8793007D65A8 /* StepDay.swift in Sources */,
 				E9EEF0E9293D5FE5007D65A8 /* WeeklyStepViewModelTests.swift in Sources */,
+				E9EEF108293D87A4007D65A8 /* WeeklyStepViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
