@@ -26,7 +26,7 @@ struct DailyStepView: View {
             
             Section {
                 HStack{
-                    Text("Units")
+                    Text("Kilometers / Miles")
                     Toggle("",isOn: Binding<Bool>(
                         get: {Settings.shared.usesMeters},
                         set: {Settings.shared.usesMeters = $0}))

@@ -15,6 +15,8 @@ class WeeklyStepViewModel: ObservableObject {
     @Published var todayDataSource: DailyStepViewModel = DailyStepViewModel()
     @Published var weekDataSource: [DailyStepViewModel] = []
     
+    @Published var selectedDailyStep: DailyStepViewModel = DailyStepViewModel()
+    
     private let stepService: StepDataPublisher
     private var cancellables = Set<AnyCancellable>()
     
@@ -108,7 +110,7 @@ class WeeklyStepViewModel: ObservableObject {
 }
 
 extension WeeklyStepViewModel {
-    func dailyStepView (dailyStepViewModel: DailyStepViewModel) -> some View {
-        return DailyStepView(viewModel: dailyStepViewModel)
+    func dailyStepView() -> some View {
+        return DailyStepView(viewModel: selectedDailyStep)
     }
 }

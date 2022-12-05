@@ -12,11 +12,9 @@ struct WeeklyStepView: View {
     
     @ObservedObject var viewModel: WeeklyStepViewModel
     @State private var showSheet = false
-    @State var selectedRow: DailyStepViewModel
     
     init(viewModel: WeeklyStepViewModel) {
         self.viewModel = viewModel
-        self.selectedRow = DailyStepViewModel()
     }
     
     var body: some View {
@@ -65,7 +63,7 @@ struct WeeklyStepView: View {
                 
                 List(viewModel.weekDataSource) { rowViewModel in
                     Button(action: {
-                        DispatchQueue.main.async { self.selectedRow = rowViewModel }
+                        self.viewModel.selectedDailyStep = rowViewModel
                         showSheet = true
                     }, label: {
                         DailyStepRow(viewModel: rowViewModel)
@@ -75,7 +73,7 @@ struct WeeklyStepView: View {
             }
         }
         .sheet(isPresented: $showSheet, content: {
-            viewModel.dailyStepView(dailyStepViewModel: self.selectedRow)
+            viewModel.dailyStepView()
                 .presentationDetents([.medium])
         })
     }
