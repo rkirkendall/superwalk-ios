@@ -21,6 +21,7 @@ let shortDayFormatter: DateFormatter = {
     return df
 }()
 
+/// View model for a StepDay.
 class DailyStepViewModel: Identifiable, ObservableObject {
     
     @Published var distance: String = "--"
@@ -34,11 +35,21 @@ class DailyStepViewModel: Identifiable, ObservableObject {
         self.date = dayFormatter.string(from: item.date)
         self.shortDate = shortDayFormatter.string(from: item.date)
         self.id = UUID()
+        
         self.stepsInt = item.stepCount
+        
         if item.stepCount == 0 {
             self.steps = "--"
         } else {
             self.steps = "\(item.stepCount)"
+        }
+        
+        if let descended = item.floorsDescended {
+            self.floorsDescended = String(descended)
+        }
+        
+        if let ascended = item.floorsAscended {
+            self.floorsAscended = String(ascended)
         }
         
         Settings.shared.$usesMeters
@@ -73,4 +84,6 @@ class DailyStepViewModel: Identifiable, ObservableObject {
     var shortDate: String
     var steps: String
     var stepsInt: Int
+    var floorsAscended: String? = nil
+    var floorsDescended: String? = nil
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9EEF0AD29395687007D65A8 /* RockTheWalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AC29395687007D65A8 /* RockTheWalkApp.swift */; };
+		E9EEF0AD29395687007D65A8 /* SuperwalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AC29395687007D65A8 /* SuperwalkApp.swift */; };
 		E9EEF0AF29395687007D65A8 /* WeeklyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */; };
 		E9EEF0B129395689007D65A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EEF0B029395689007D65A8 /* Assets.xcassets */; };
 		E9EEF0B429395689007D65A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EEF0B329395689007D65A8 /* Preview Assets.xcassets */; };
@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		E9EEF0A929395687007D65A8 /* SUPERWALK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUPERWALK.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9EEF0AC29395687007D65A8 /* RockTheWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockTheWalkApp.swift; sourceTree = "<group>"; };
+		E9EEF0AC29395687007D65A8 /* SuperwalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperwalkApp.swift; sourceTree = "<group>"; };
 		E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepView.swift; sourceTree = "<group>"; };
 		E9EEF0B029395689007D65A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9EEF0B329395689007D65A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				E9EEF0C5293AB6FC007D65A8 /* Models */,
 				E9EEF0C4293AB6EF007D65A8 /* Step Service */,
 				E9EEF0C7293ABEDC007D65A8 /* Utils */,
-				E9EEF0AC29395687007D65A8 /* RockTheWalkApp.swift */,
+				E9EEF0AC29395687007D65A8 /* SuperwalkApp.swift */,
 				E9EEF0B029395689007D65A8 /* Assets.xcassets */,
 				E9EEF0B229395689007D65A8 /* Preview Content */,
 			);
@@ -250,7 +250,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E9EEF0A429395687007D65A8 /* Build configuration list for PBXProject "RockTheWalk" */;
+			buildConfigurationList = E9EEF0A429395687007D65A8 /* Build configuration list for PBXProject "SUPERWALK" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -299,7 +299,7 @@
 				E9EEF0CA293B9D72007D65A8 /* WeeklyStepViewModel.swift in Sources */,
 				E9EEF0CE293C122D007D65A8 /* CMPedometer + Async.swift in Sources */,
 				E9EEF0D2293C41F2007D65A8 /* DailyStepViewModel.swift in Sources */,
-				E9EEF0AD29395687007D65A8 /* RockTheWalkApp.swift in Sources */,
+				E9EEF0AD29395687007D65A8 /* SuperwalkApp.swift in Sources */,
 				E9EEF0BD293973AC007D65A8 /* Date + Days.swift in Sources */,
 				E9EEF0D9293D2839007D65A8 /* Future + Async.swift in Sources */,
 				E9EEF0D7293D124D007D65A8 /* DailyStepRow.swift in Sources */,
@@ -566,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9EEF0A429395687007D65A8 /* Build configuration list for PBXProject "RockTheWalk" */ = {
+		E9EEF0A429395687007D65A8 /* Build configuration list for PBXProject "SUPERWALK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9EEF0B529395689007D65A8 /* Debug */,

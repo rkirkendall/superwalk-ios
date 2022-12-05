@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// "Detail view" to show additional pedometer related data for a day.
 struct DailyStepView: View {
     
     @ObservedObject var viewModel: DailyStepViewModel
@@ -23,6 +24,14 @@ struct DailyStepView: View {
         List {
             DailyDetailRow(key: "Steps", value: viewModel.steps)
             DailyDetailRow(key: "Distance", value: viewModel.distance)
+            
+            if let ascended = viewModel.floorsAscended {
+                DailyDetailRow(key: "Floors ascended", value: ascended)
+            }
+            
+            if let descended = viewModel.floorsDescended {
+                DailyDetailRow(key: "Floors descended", value: descended)
+            }
             
             Section {
                 HStack{

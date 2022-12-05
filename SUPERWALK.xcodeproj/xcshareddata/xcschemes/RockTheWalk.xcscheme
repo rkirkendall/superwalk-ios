@@ -17,7 +17,7 @@
                BlueprintIdentifier = "E9EEF0A829395687007D65A8"
                BuildableName = "SUPERWALK.app"
                BlueprintName = "SUPERWALK"
-               ReferencedContainer = "container:RockTheWalk.xcodeproj">
+               ReferencedContainer = "container:SUPERWALK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
                BlueprintIdentifier = "E9EEF0E5293D5FE5007D65A8"
                BuildableName = "SUPERWALKTests.xctest"
                BlueprintName = "SUPERWALKTests"
-               ReferencedContainer = "container:RockTheWalk.xcodeproj">
+               ReferencedContainer = "container:SUPERWALK.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,7 +47,7 @@
                BlueprintIdentifier = "E9EEF0FA293D86DB007D65A8"
                BuildableName = "SUPERWALKTests2.xctest"
                BlueprintName = "SUPERWALKTests2"
-               ReferencedContainer = "container:RockTheWalk.xcodeproj">
+               ReferencedContainer = "container:SUPERWALK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -69,7 +69,7 @@
             BlueprintIdentifier = "E9EEF0A829395687007D65A8"
             BuildableName = "SUPERWALK.app"
             BlueprintName = "SUPERWALK"
-            ReferencedContainer = "container:RockTheWalk.xcodeproj">
+            ReferencedContainer = "container:SUPERWALK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -86,7 +86,7 @@
             BlueprintIdentifier = "E9EEF0A829395687007D65A8"
             BuildableName = "SUPERWALK.app"
             BlueprintName = "SUPERWALK"
-            ReferencedContainer = "container:RockTheWalk.xcodeproj">
+            ReferencedContainer = "container:SUPERWALK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

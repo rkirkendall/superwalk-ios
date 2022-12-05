@@ -1,5 +1,5 @@
 //
-//  RockTheWalkApp.swift
+//  SuperwalkApp.swift
 //  RockTheWalk
 //
 //  Created by Ricky Kirkendall on 12/1/22.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct RockTheWalkApp: App {
+struct SuperwalkApp: App {
     
     let stepService: StepDataPublisher
     let allDaysViewModel: WeeklyStepViewModel

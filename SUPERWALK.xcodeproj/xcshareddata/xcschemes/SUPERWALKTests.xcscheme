@@ -20,7 +20,7 @@
                BlueprintIdentifier = "E9EEF0E5293D5FE5007D65A8"
                BuildableName = "SUPERWALKTests.xctest"
                BlueprintName = "SUPERWALKTests"
-               ReferencedContainer = "container:RockTheWalk.xcodeproj">
+               ReferencedContainer = "container:SUPERWALK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
