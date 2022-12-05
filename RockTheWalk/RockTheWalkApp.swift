@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct RockTheWalkApp: App {
     
-    let stepService: StepsFetchable
+    let stepService: StepDataPublisher
     let allDaysViewModel: WeeklyStepViewModel
     
     init() {

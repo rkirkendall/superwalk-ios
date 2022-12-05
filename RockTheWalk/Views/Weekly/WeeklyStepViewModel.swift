@@ -15,7 +15,7 @@ class WeeklyStepViewModel: ObservableObject {
     @Published var todayDataSource: DailyStepViewModel = DailyStepViewModel()
     @Published var weekDataSource: [DailyStepViewModel] = []
     
-    private let stepService: StepsFetchable
+    private let stepService: StepDataPublisher
     private var cancellables = Set<AnyCancellable>()
     
     @Published var stepServiceError: StepsError?
@@ -41,7 +41,7 @@ class WeeklyStepViewModel: ObservableObject {
         }
     }
     
-    init(stepService: StepsFetchable) {
+    init(stepService: StepDataPublisher) {
         self.stepService = stepService
         
         fetchLastWeeksSteps()

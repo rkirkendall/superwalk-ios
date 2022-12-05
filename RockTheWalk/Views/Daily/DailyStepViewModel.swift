@@ -41,7 +41,7 @@ class DailyStepViewModel: Identifiable, ObservableObject {
             .store(in: &cancellables)
     }
     
-    func updateDistanceLabel(_ usesMeters: Bool) {
+    func updateDistanceLabel(_ usesMeters: Bool) {        
         guard let distanceM = item.distanceMeters
         else {
             self.distance = "Not available"

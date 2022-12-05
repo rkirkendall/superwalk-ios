@@ -9,9 +9,21 @@ import Foundation
 import CoreMotion
 import Combine
 
-protocol StepsFetchable {
+protocol StepDataPublisher {
     func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError>
     func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError>
+}
+
+protocol StepDataProvider {
+    func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<StepDay, StepsError>
+}
+extension StepDataProvider {
+    func aggregateLastWeeksSteps() -> AnyPublisher<[StepDay], StepsError> {
+        let pubs = (0...6).map { stepsDataForDaysAgo($0) }
+        return Publishers.MergeMany(pubs)
+            .collect()
+            .eraseToAnyPublisher()
+    }
 }
 
 final class StepService {
@@ -19,9 +31,9 @@ final class StepService {
     private var dailyStepUpdates = PassthroughSubject<StepDay, StepsError>()
 }
 
-extension StepService: StepsFetchable {
+extension StepService: StepDataPublisher {
     public func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError> {
-        return lastWeeksSteps()
+        return aggregateLastWeeksSteps()
     }
 
     public func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError> {
@@ -54,18 +66,9 @@ extension StepService {
 }
 
 //MARK: - Data Queries
-extension StepService {
-    private func lastWeeksSteps() -> AnyPublisher<[StepDay], StepsError> {
-        let pubs = (0...6).map { stepsDataForDaysAgo($0) }
-        return Publishers.MergeMany(pubs)
-            .collect()
-            .map { pedometerDataArray in
-                pedometerDataArray.map { StepDay(pedometerData: $0) }
-            }
-            .eraseToAnyPublisher()
-    }
+extension StepService: StepDataProvider {
         
-    private func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<CMPedometerData, StepsError>  {
+    internal func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<StepDay, StepsError> {
         
         let (start, end) = Date().dayStartAndEndFor(numberOfDaysAgo: days)
         guard let start = start, let end = end
@@ -73,7 +76,11 @@ extension StepService {
             return Fail(error: StepsError.invalidQueryDateContruction).eraseToAnyPublisher()
         }
         
-        return pedometer.queryPedometerData(from: start, to: end).eraseToAnyPublisher()
+        return pedometer.queryPedometerData(from: start, to: end)
+            .map { cmPedometerdata in
+                StepDay(pedometerData: cmPedometerdata)
+            }
+            .eraseToAnyPublisher()
     }
     
     
