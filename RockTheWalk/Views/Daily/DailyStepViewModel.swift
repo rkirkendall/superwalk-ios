@@ -21,10 +21,19 @@ let shortDayFormatter: DateFormatter = {
     return df
 }()
 
-/// View model for a StepDay.
+/// View model used for `DailyStepView` and `DailyStepRow`. Takes a `StepDay` as a data source.
 class DailyStepViewModel: Identifiable, ObservableObject {
     
+    /// Published to allow for updates if the user toggles Mi / Km
     @Published var distance: String = "--"
+    
+    var id: UUID
+    var date: String
+    var shortDate: String
+    var steps: String
+    var stepsInt: Int
+    var floorsAscended: String? = nil
+    var floorsDescended: String? = nil
     
     private let item: StepDay
     private var cancellables = Set<AnyCancellable>()
@@ -78,12 +87,4 @@ class DailyStepViewModel: Identifiable, ObservableObject {
             self.distance = String(format: "%.2f mi", mi)
         }
     }
-    
-    var id: UUID
-    var date: String
-    var shortDate: String
-    var steps: String
-    var stepsInt: Int
-    var floorsAscended: String? = nil
-    var floorsDescended: String? = nil
 }

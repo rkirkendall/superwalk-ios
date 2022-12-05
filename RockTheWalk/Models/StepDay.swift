@@ -8,6 +8,7 @@
 import Foundation
 import CoreMotion
 
+/// Primary model for Superwalk. Used where possiblew to wrap CMPedometer data.
 public struct StepDay {
     
     let date: Date
