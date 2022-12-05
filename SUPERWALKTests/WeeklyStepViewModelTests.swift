@@ -6,30 +6,61 @@
 //
 
 import XCTest
+import Combine
+
+@testable import SUPERWALK
+
+class MockStepDataPublisher: StepDataPublisher {
+    
+    var shouldFail = false
+    
+    func stepsLastWeek() -> AnyPublisher<[SUPERWALK.StepDay], SUPERWALK.StepsError> {
+        
+        var toReturn: [StepDay] = []
+        
+        for days in 0...6 {
+            let (start, _) = Date().dayStartAndEndFor(numberOfDaysAgo: days)
+            toReturn.append(StepDay(date: start!, stepCount: Int.random(in: 800...1600)))
+        }
+        
+        if shouldFail {
+            return Fail<[StepDay], StepsError>(error: StepsError.accessDenied)
+                .eraseToAnyPublisher()
+        }
+        return Just(toReturn)
+            .setFailureType(to: StepsError.self)
+            .eraseToAnyPublisher()
+    }
+    
+    func stepsTodayUpdate() -> AnyPublisher<SUPERWALK.StepDay, SUPERWALK.StepsError> {
+        if shouldFail {
+            return Fail<StepDay, StepsError>(error: StepsError.accessDenied)
+                .eraseToAnyPublisher()
+        }
+        return Just(StepDay(date: Date(), stepCount: Int.random(in: 800...1600)))
+            .setFailureType(to: StepsError.self)
+            .eraseToAnyPublisher()
+    }
+    
+    
+}
 
 final class WeeklyStepViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testErrorHandling() throws {
+        
+        let mockStepPublisher = MockStepDataPublisher()
+        let weeklyStepViewModel = WeeklyStepViewModel(stepService: mockStepPublisher)
+        
+        weeklyStepViewModel.handleError(.accessDenied)
+        
+        XCTAssertNotNil(weeklyStepViewModel.error)
+        XCTAssert(weeklyStepViewModel.weekDataSource.count == 0)
+        XCTAssertTrue(weeklyStepViewModel.showSettingsButton)
+        
+        weeklyStepViewModel.handleError(.accessRestricted)
+        XCTAssertFalse(weeklyStepViewModel.showSettingsButton)
+                
     }
 
 }

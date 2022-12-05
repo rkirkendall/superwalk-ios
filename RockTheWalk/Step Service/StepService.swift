@@ -9,26 +9,14 @@ import Foundation
 import CoreMotion
 import Combine
 
-protocol StepDataPublisher {
-    func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError>
-    func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError>
-}
-
-protocol StepDataProvider {
-    func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<StepDay, StepsError>
-}
-extension StepDataProvider {
-    func aggregateLastWeeksSteps() -> AnyPublisher<[StepDay], StepsError> {
-        let pubs = (0...6).map { stepsDataForDaysAgo($0) }
-        return Publishers.MergeMany(pubs)
-            .collect()
-            .eraseToAnyPublisher()
-    }
-}
-
 final class StepService {
     private let pedometer = CMPedometer()
     private var dailyStepUpdates = PassthroughSubject<StepDay, StepsError>()
+}
+
+protocol StepDataPublisher {
+    func stepsLastWeek() -> AnyPublisher<[StepDay], StepsError>
+    func stepsTodayUpdate() -> AnyPublisher<StepDay, StepsError>
 }
 
 extension StepService: StepDataPublisher {
@@ -66,6 +54,19 @@ extension StepService {
 }
 
 //MARK: - Data Queries
+
+protocol StepDataProvider {
+    func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<StepDay, StepsError>
+}
+extension StepDataProvider {
+    func aggregateLastWeeksSteps() -> AnyPublisher<[StepDay], StepsError> {
+        let pubs = (0...6).map { stepsDataForDaysAgo($0) }
+        return Publishers.MergeMany(pubs)
+            .collect()
+            .eraseToAnyPublisher()
+    }
+}
+
 extension StepService: StepDataProvider {
         
     internal func stepsDataForDaysAgo(_ days: Int) -> AnyPublisher<StepDay, StepsError> {
