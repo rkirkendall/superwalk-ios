@@ -1,6 +1,6 @@
 //
 //  StepsError.swift
-//  RockTheWalk
+//  Superwalk
 //
 //  Created by Ricky Kirkendall on 12/3/22.
 //

@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				E9EEF110293EA7AA007D65A8 /* README.md */,
-				E9EEF0AB29395687007D65A8 /* RockTheWalk */,
+				E9EEF0AB29395687007D65A8 /* Superwalk */,
 				E9EEF0E7293D5FE5007D65A8 /* SUPERWALKTests */,
 				E9EEF0AA29395687007D65A8 /* Products */,
 			);
@@ -108,7 +108,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9EEF0AB29395687007D65A8 /* RockTheWalk */ = {
+		E9EEF0AB29395687007D65A8 /* Superwalk */ = {
 			isa = PBXGroup;
 			children = (
 				E9EEF0C6293AB709007D65A8 /* Views */,
@@ -119,7 +119,7 @@
 				E9EEF0B029395689007D65A8 /* Assets.xcassets */,
 				E9EEF0B229395689007D65A8 /* Preview Content */,
 			);
-			path = RockTheWalk;
+			path = Superwalk;
 			sourceTree = "<group>";
 		};
 		E9EEF0B229395689007D65A8 /* Preview Content */ = {
@@ -464,7 +464,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RockTheWalk/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Superwalk/Preview Content\"";
 				DEVELOPMENT_TEAM = D8658PF8FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -481,7 +481,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rickykirkendall.RockTheWalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rickykirkendall.Superwalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -496,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RockTheWalk/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Superwalk/Preview Content\"";
 				DEVELOPMENT_TEAM = D8658PF8FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -513,7 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rickykirkendall.RockTheWalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rickykirkendall.Superwalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
