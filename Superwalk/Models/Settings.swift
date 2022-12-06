@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import MediaPlayer
 
 class Settings: ObservableObject {
     static let shared = Settings()

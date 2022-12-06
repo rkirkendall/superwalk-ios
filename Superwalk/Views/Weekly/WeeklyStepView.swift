@@ -37,7 +37,7 @@ struct WeeklyStepView: View {
                         .tracking(5)
                     Text("Steps Today")
                         .bold()
-                }
+                }                
                 .padding([.bottom], 20)
                 .padding([.top], -20)
                 

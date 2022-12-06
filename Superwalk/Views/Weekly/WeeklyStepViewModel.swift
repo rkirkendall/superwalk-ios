@@ -24,7 +24,7 @@ class WeeklyStepViewModel: ObservableObject {
     private let stepService: StepDataPublisher
     private var cancellables = Set<AnyCancellable>()
         
-    @Published var stepServiceError: StepsError?
+    @Published var stepServiceError: StepsError?    
     
     /// Several things could go wrong fetching data from the pedometer (see StepsError for a full enumeration), though the most common is a lack of user permission.
     var error: String? {

@@ -36,6 +36,8 @@
 		E9EEF10D293D87A4007D65A8 /* DailyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0DB293D32A4007D65A8 /* DailyStepView.swift */; };
 		E9EEF10E293D87A4007D65A8 /* WeeklyStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0AE29395687007D65A8 /* WeeklyStepView.swift */; };
 		E9EEF10F293D87A4007D65A8 /* StepService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EEF0BA29395839007D65A8 /* StepService.swift */; };
+		E9F0B99C293FEB21002C8B7F /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0B99B293FEB21002C8B7F /* Music.swift */; };
+		E9F0B99D293FEB21002C8B7F /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0B99B293FEB21002C8B7F /* Music.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		E9EEF0E8293D5FE5007D65A8 /* WeeklyStepViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepViewModelTests.swift; sourceTree = "<group>"; };
 		E9EEF0F3293D6805007D65A8 /* StepDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDataProviderTests.swift; sourceTree = "<group>"; };
 		E9EEF110293EA7AA007D65A8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E9F0B99B293FEB21002C8B7F /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		E9F0B99E293FEC65002C8B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = SUPERWALK/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		E9EEF0A029395687007D65A8 = {
 			isa = PBXGroup;
 			children = (
+				E9F0B99E293FEC65002C8B7F /* Info.plist */,
 				E9EEF110293EA7AA007D65A8 /* README.md */,
 				E9EEF0AB29395687007D65A8 /* Superwalk */,
 				E9EEF0E7293D5FE5007D65A8 /* SUPERWALKTests */,
@@ -145,6 +150,7 @@
 			children = (
 				E9EEF0C2293AB6B8007D65A8 /* StepDay.swift */,
 				E9EEF0DF293D4925007D65A8 /* Settings.swift */,
+				E9F0B99B293FEB21002C8B7F /* Music.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				E9EEF0D9293D2839007D65A8 /* Future + Async.swift in Sources */,
 				E9EEF0D7293D124D007D65A8 /* DailyStepRow.swift in Sources */,
 				E9EEF0CC293C0014007D65A8 /* StepsError.swift in Sources */,
+				E9F0B99C293FEB21002C8B7F /* Music.swift in Sources */,
 				E9EEF0C3293AB6B8007D65A8 /* StepDay.swift in Sources */,
 				E9EEF0BB29395839007D65A8 /* StepService.swift in Sources */,
 			);
@@ -317,6 +324,7 @@
 			files = (
 				E9EEF10D293D87A4007D65A8 /* DailyStepView.swift in Sources */,
 				E9EEF107293D87A4007D65A8 /* Date + Days.swift in Sources */,
+				E9F0B99D293FEB21002C8B7F /* Music.swift in Sources */,
 				E9EEF106293D87A4007D65A8 /* StepsError.swift in Sources */,
 				E9EEF10B293D87A4007D65A8 /* DailyStepViewModel.swift in Sources */,
 				E9EEF104293D8793007D65A8 /* Settings.swift in Sources */,
@@ -468,8 +476,10 @@
 				DEVELOPMENT_TEAM = D8658PF8FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SUPERWALK/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SUPERWALK;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Play and pause music as you walk.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "Motion data is used to display your recent step counts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -500,8 +510,10 @@
 				DEVELOPMENT_TEAM = D8658PF8FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SUPERWALK/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SUPERWALK;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Play and pause music as you walk.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "Motion data is used to display your recent step counts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

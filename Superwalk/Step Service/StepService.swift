@@ -55,6 +55,27 @@ extension StepService {
             }
             else if let data = data { self.dailyStepUpdates.send(StepDay(pedometerData: data)) }
         }
+        
+        guard CMPedometer.isPedometerEventTrackingAvailable() else { return }
+        
+        pedometer.startEventUpdates { event, error in
+            if let error = error  {
+                print (error.localizedDescription)
+                return
+            }
+            
+            guard let event = event else { return }
+            
+            switch event.type {
+            case .pause:
+                MusicPlayer.shared.pause()
+            case .resume:
+                MusicPlayer.shared.play()
+            default:
+                break
+            }
+            
+        }
     }
 
     private func stopStepUpdates() { pedometer.stopUpdates() }
