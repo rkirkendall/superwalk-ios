@@ -32,7 +32,7 @@ struct WeeklyStepView: View {
                 
                 VStack {
                     Text(viewModel.todayDataSource.steps)
-                        .font(.system(size:60))
+                        .font(.system(size:50))
                         .bold()
                         .tracking(5)
                     Text("Steps Today")
